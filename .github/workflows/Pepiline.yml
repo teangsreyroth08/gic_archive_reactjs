@@ -62,12 +62,12 @@ jobs:
       - name: Deploy application
         run: echo "Deploying application..."
 
-  # notify:
-  #   runs-on: ubuntu-latest
-  #   needs: deploy  # Ensures this job only runs if the deploy job succeeds
-  #   steps:
-  #     - name: Notify via Telegram
-  #       run: |
-  #         curl -X POST https://api.telegram.org/bot<Your_Telegram_Bot_Token>/sendMessage \
-  #         -d chat_id=<Your_Chat_ID> \
-  #         -d text="Deployment completed successfully!"
+  notify:
+    runs-on: ubuntu-latest
+    needs: deploy  # Ensures this job only runs if the deploy job succeeds
+    steps:
+      - name: Notify via Telegram
+        run: |
+          curl -X POST https://api.telegram.org/bot7938179980:AAHdFnfZOb-2gVYQipCL8RKqdLvHAJAheIk/sendMessage \
+          -d chat_id=628390613 \
+          -d text="Deployment completed successfully!"
